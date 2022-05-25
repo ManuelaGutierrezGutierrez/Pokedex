@@ -25,6 +25,7 @@ const getPokemon = async (pokemons) => {
 
 const printPokemon = (result) => {
 	const pokemonCard$$ = document.createElement("div");
+	pokemonCard$$.classList.add("pokemonCard");
 	const pokemonID$$ = document.createElement("h3");
 	pokemonID$$.classList.add("pokeID");
 	pokemonID$$.textContent = result.id;
@@ -37,23 +38,28 @@ const printPokemon = (result) => {
 	const pokemonName$$ = document.createElement("h2");
 	pokemonName$$.classList.add("pokeName");
 	pokemonName$$.textContent = result.name;
+	const pokemonSize$$ = document.createElement("div");
+	pokemonSize$$.classList.add("pokeSize");
 	const pokemonHeight$$ = document.createElement("p");
 	pokemonHeight$$.classList.add("pokeHeight");
 	pokemonHeight$$.textContent = result.height;
 	const pokemonWeight$$ = document.createElement("p");
 	pokemonWeight$$.classList.add("pokeWeight");
 	pokemonWeight$$.textContent = result.weight;
+	const pokemonTypeContainer$$ = document.createElement("div");
+	pokemonTypeContainer$$.classList.add("pokeTypeContainer");
 
 	pokedex$$.appendChild(pokemonCard$$);
 	pokemonCard$$.appendChild(pokemonID$$);
 	pokemonCard$$.appendChild(pokemonPhoto$$);
 	pokemonCard$$.appendChild(pokemonName$$);
+	pokemonCard$$.appendChild(pokemonTypeContainer$$);
 
 	//Invoco a la función que saca los tipos de pokemon
-	getPokemonType(result.types, pokemonCard$$);
-
-	pokemonCard$$.appendChild(pokemonHeight$$);
-	pokemonCard$$.appendChild(pokemonWeight$$);
+	getPokemonType(result.types, pokemonTypeContainer$$);
+	pokemonCard$$.appendChild(pokemonSize$$);
+	pokemonSize$$.appendChild(pokemonHeight$$);
+	pokemonSize$$.appendChild(pokemonWeight$$);
 };
 
 //Función para imprimir uno o dos tipos de pokemon, según tenga.
