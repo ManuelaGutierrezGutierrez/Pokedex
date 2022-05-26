@@ -47,6 +47,9 @@ const printPokemon = (pokemonToPrint) => {
 		pokemonID$$.classList.add("pokeID");
 		pokemonID$$.textContent = pokemon.id;
 
+		const pokemonPhotoContainer$$ = document.createElement("div");
+		pokemonPhotoContainer$$.classList.add("pokemonPhotoContainer");
+
 		const pokemonPhoto$$ = document.createElement("img");
 		pokemonPhoto$$.classList.add("photo");
 		pokemonPhoto$$.setAttribute(
@@ -74,7 +77,8 @@ const printPokemon = (pokemonToPrint) => {
 
 		pokedex$$.appendChild(pokemonCard$$);
 		pokemonCard$$.appendChild(pokemonID$$);
-		pokemonCard$$.appendChild(pokemonPhoto$$);
+		pokemonCard$$.appendChild(pokemonPhotoContainer$$);
+		pokemonPhotoContainer$$.appendChild(pokemonPhoto$$);
 		pokemonCard$$.appendChild(pokemonName$$);
 		pokemonCard$$.appendChild(pokemonTypeContainer$$);
 
@@ -120,5 +124,32 @@ const search$$ = document
 
 		printPokemon(filtered);
 	});
+
+//Función para buscar cada tipo de pokemon a través de unos botones
+
+const filterPokemonsByType = (type) => {
+	const filteredPokemonByType = allPokemonResults.filter((pokemon) => {
+		let matchFirstType = false;
+		let matchSecondType = false;
+
+		if (pokemon.types[1]) {
+			matchSecondType = pokemon.types[1].type.name === type;
+		}
+
+		if (pokemon.types[0]) {
+			matchFirstType = pokemon.types[0].type.name === type;
+		}
+
+		return matchFirstType || matchSecondType;
+	});
+	console.log(filteredPokemonByType);
+	printPokemon(filteredPokemonByType);
+};
+
+document.querySelectorAll(".types_selector").forEach((button) => {
+	button.addEventListener("click", (event) => {
+		filterPokemonsByType(event.target.classList[1]);
+	});
+});
 
 apiPokemon();

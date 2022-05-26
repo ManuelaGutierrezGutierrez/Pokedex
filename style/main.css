@@ -41,6 +41,42 @@ body {
   margin: 50px 0px;
 }
 
+.searchPokemonContainer #search-input {
+  width: 500px;
+  height: 30px;
+  border-radius: 20px;
+  padding: 10px;
+}
+
+.types {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.types_selector {
+  padding: 5px;
+  margin: 5px;
+  width: 100px;
+  border: 2px solid black;
+  margin-right: 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  border-radius: 20px;
+  text-align: center;
+  font-size: 1.5em;
+  font-weight: bolder;
+  background-color: #ffcc00;
+}
+
 .pokedex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -94,7 +130,8 @@ body {
 }
 
 .pokemonCard .photo {
-  width: 100%;
+  width: 200px;
+  height: 250px;
   max-height: 250px;
   margin-bottom: 10px;
 }
