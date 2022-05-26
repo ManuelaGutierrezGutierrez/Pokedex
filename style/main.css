@@ -26,6 +26,21 @@ body {
   max-width: 30%;
 }
 
+.searchPokemonContainer {
+  width: 100vw;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  text-align: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 50px 0px;
+}
+
 .pokedex {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -38,7 +53,7 @@ body {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin: 80px auto 100px;
+  margin: 0px 30px;
 }
 
 .pokemonCard {

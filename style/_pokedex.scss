@@ -11,12 +11,21 @@ body {
 	}
 }
 
+.searchPokemonContainer {
+	width: 100vw;
+	display: flex;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+	margin: 50px 0px;
+}
+
 .pokedex {
 	display: flex;
 	flex-wrap: wrap;
 	align-items: space-between;
 	justify-content: center;
-	margin: 80px auto 100px;
+	margin: 0px 30px;
 }
 
 .pokemonCard {
